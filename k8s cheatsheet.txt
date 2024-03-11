@@ -1,0 +1,4 @@
+kubectl create deployment mydep1 --image=vimal13/apache-webserver-php
+kubectl decsribe pods
+kubectl decsribe deployment
+kubectl scale deployment mydep1 --replicas=10

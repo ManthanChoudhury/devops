@@ -6,4 +6,6 @@ kubectl get deployment
 kubectl get svc // loadbalancer
 kubectl scale deployment mydep1 --replicas=10
 kubectl get pods -o wide // to get all ips of pod
+minikube ip
+kubectl expose deployment mydep1 --type=NodePort --port=80
 

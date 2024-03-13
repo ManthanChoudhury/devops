@@ -8,4 +8,9 @@ kubectl scale deployment mydep1 --replicas=10
 kubectl get pods -o wide // to get all ips of pod
 minikube ip
 kubectl expose deployment mydep1 --type=NodePort --port=80
-
+kubectl run mydep1 --image="image name"
+kubectl delete all -all
+kubectl explain pods
+kubectl explain pods.spec
+kubectl run --help
+kubectl create -f dep1.yml

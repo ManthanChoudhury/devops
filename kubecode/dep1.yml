@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: scdep
+
+spec:
+  containers:
+  - name: "c1"
+    image: "image name"
+ 

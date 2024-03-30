@@ -1,0 +1,31 @@
+pipeline{
+  agent node
+  stages {
+    stage('Back-end') {
+      agent {
+        docker { image 'maven:latest' }
+      }
+      steps {
+        sh 'mvn --version'
+      }
+    }
+    stage('Front-end') {
+      agent {
+        docker { image 'node:latest' }
+      }
+      steps {
+        sh 'node --version'
+      }
+    }
+    stage('DB') {
+      agent {
+        docker { image 'mysql:latest' }
+      }
+      steps {
+        sh 'mysql --version'
+      }
+    }
+  }
+}
+
+    

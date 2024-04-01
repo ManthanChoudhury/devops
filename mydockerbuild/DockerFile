@@ -1,4 +1,5 @@
-FROM docker/whalesay:latest
-RUN apt-get -y update && apt-get install -y fortunes
-CMD /usr/games/fortune -a | cowsay
+FROM ubuntu
 
+RUN apt update
+RUN apt install nginx -y
+CMD ["/usr/sbin/nginx"]

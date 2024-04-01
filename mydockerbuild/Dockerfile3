@@ -1,0 +1,21 @@
+
+FROM ubuntu                         # base image
+RUN apt update                      # run commands while building
+RUN apt install nginx -y            # run commands while building
+WORKDIR ~/                          # working dir that CMD is run from
+ENTRYPOINT echo                     # default application
+CMD "echo" "Hello docker!"          # main command / default application
+CMD ["--port 27017"]                # params for ENTRYPOINT
+CMD "Hello docker!"                 # params for ENTRYPOINT
+ENV SERVER_WORKS 4                  # set env variable
+EXPOSE 8080                         # expose a port, not published to the host
+MAINTAINER authors_name             # deprecated
+LABEL version="1.0"                 # add metadata
+LABEL author="User One"             # add metadata
+USER 751                            # UID (or username) to run as
+VOLUME ["/my_files"]                # sets up a volume
+COPY test relativeDir/              # copies "test" to `WORKDIR`/relativeDir/
+COPY test /absoluteDir/             # copies "test" to /absoluteDir/
+COPY ssh_config /etc/ssh/ssh_config     # copy over a vile
+COPY --chown=user1:group1 files* /data/ # also changes ownership
+ADD /dir1 /dir2                         # like copy but does more ...
